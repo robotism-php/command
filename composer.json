@@ -1,0 +1,27 @@
+{
+    "name": "robotism-php/command",
+    "description": "The command parser implement for chat bot in PHP",
+    "type": "library",
+    "license": "LGPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "RobotismPhp\\Command\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MuChen",
+            "email": "2387911242@qq.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "robotism-php/contract": "dev-main",
+        "symfony/event-dispatcher": "^5.4",
+        "ext-mbstring": "*",
+        "myclabs/php-enum": "^1.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
