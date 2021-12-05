@@ -326,4 +326,21 @@ class CommandParser
                 throw new SyntaxException('Unknown argument type : '.$type.' provided.');
         }
     }
+    public static function generateReadableSignature(CommandSignature $signature,$verbose=false){
+        $readable_signature=$signature->name;
+        foreach($signature->arguments as $argument){
+            $readable_signature.=' ';
+            if(!$argument->optional)
+                $readable_signature.='<';
+            else
+                $readable_signature.='[';
+            $readable_signature.=$argument->display;
+            if(!$argument->optional)
+                $readable_signature.='>';
+            else
+                $readable_signature.=']';
+        }
+        return $readable_signature;
+    }
+
 }

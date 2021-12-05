@@ -4,16 +4,19 @@
 namespace RobotismPhp\Command;
 
 
+use PharIo\Manifest\Application;
 use RobotismPhp\Command\Input\InputInterface;
 use RobotismPhp\Command\Output\OutputInterface;
 
 abstract class Command
 {
+    protected Application $app;
     protected string $signature='';
     protected string $description='';
 
-    public function __construct(){
+    public function __construct(Application $application){
         $this->configure();
+        $this->app=$application;
     }
 
     public abstract function configure();
